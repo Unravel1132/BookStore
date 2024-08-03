@@ -14,20 +14,15 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "Books")
-public class BookEntity {
+@Table(name = "Cart")
+public class CartEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String author;
-    private String isbn;
+    @Column(nullable = false)
+    private String customerName;
 
-    @ManyToOne
-    @JoinColumn(name = "Category_id")
-    private CategoryEntity category;
-
-    @OneToMany(mappedBy = "book")
-    private List<BookInCartEntity> books;
+    @OneToMany(mappedBy = "cart")
+    private List<BookInCartEntity> bookInCarts;
 }

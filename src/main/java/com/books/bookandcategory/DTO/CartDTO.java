@@ -1,11 +1,12 @@
 package com.books.bookandcategory.DTO;
 
+
 import lombok.Data;
+
 import java.util.List;
 
 @Data
-public class CategoryDTO {
+public class CartDTO {
     private Long id;
-    private String name;
-    private List<BookDTO> books;
+    private String customerName;
 }
